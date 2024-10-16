@@ -5,7 +5,7 @@ class MyTextField extends StatelessWidget {
   final String hintText;
   final TextEditingController controller;
 
-  MyTextField({
+  const MyTextField({super.key, 
     required this.hintText,
     required this.controller,
 
@@ -28,7 +28,7 @@ class MyTextField extends StatelessWidget {
             color: Mycolor.grey, // Set hint text color to gray
           ),
         ),
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 16.0,
           color: Colors.black87,
         ),

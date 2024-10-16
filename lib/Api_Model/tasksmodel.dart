@@ -47,7 +47,7 @@ class TasksModel {
     isCompleted = json['is_completed'];
     content = json['content'];
     description = json['description'];
-    due = json['due'] != null ? new Due.fromJson(json['due']) : null;
+    due = json['due'] != null ? Due.fromJson(json['due']) : null;
     duration = json['duration'];
     id = json['id'];
     labels = json['labels'].cast<String>();
@@ -60,27 +60,27 @@ class TasksModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['creator_id'] = this.creatorId;
-    data['created_at'] = this.createdAt;
-    data['assignee_id'] = this.assigneeId;
-    data['assigner_id'] = this.assignerId;
-    data['comment_count'] = this.commentCount;
-    data['is_completed'] = this.isCompleted;
-    data['content'] = this.content;
-    data['description'] = this.description;
-    if (this.due != null) {
-      data['due'] = this.due!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['creator_id'] = creatorId;
+    data['created_at'] = createdAt;
+    data['assignee_id'] = assigneeId;
+    data['assigner_id'] = assignerId;
+    data['comment_count'] = commentCount;
+    data['is_completed'] = isCompleted;
+    data['content'] = content;
+    data['description'] = description;
+    if (due != null) {
+      data['due'] = due!.toJson();
     }
-    data['duration'] = this.duration;
-    data['id'] = this.id;
-    data['labels'] = this.labels;
-    data['order'] = this.order;
-    data['priority'] = this.priority;
-    data['project_id'] = this.projectId;
-    data['section_id'] = this.sectionId;
-    data['parent_id'] = this.parentId;
-    data['url'] = this.url;
+    data['duration'] = duration;
+    data['id'] = id;
+    data['labels'] = labels;
+    data['order'] = order;
+    data['priority'] = priority;
+    data['project_id'] = projectId;
+    data['section_id'] = sectionId;
+    data['parent_id'] = parentId;
+    data['url'] = url;
     return data;
   }
 }
@@ -103,12 +103,12 @@ class Due {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['date'] = this.date;
-    data['is_recurring'] = this.isRecurring;
-    data['datetime'] = this.datetime;
-    data['string'] = this.string;
-    data['timezone'] = this.timezone;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['date'] = date;
+    data['is_recurring'] = isRecurring;
+    data['datetime'] = datetime;
+    data['string'] = string;
+    data['timezone'] = timezone;
     return data;
   }
 }
@@ -127,10 +127,10 @@ class sendTasksModel {
   
 
  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
   
-    data['content'] = this.content;
-    data['description'] = this.description;
+    data['content'] = content;
+    data['description'] = description;
     return data;
   }
 }

@@ -6,7 +6,7 @@ import 'package:practice/utils/configs.dart';
 
 class Createpage extends StatelessWidget {
   TasksModel? edittask ;
-   Createpage(this.edittask);
+   Createpage(this.edittask, {super.key});
 
 TextEditingController name = TextEditingController();
 TextEditingController description = TextEditingController();
@@ -94,9 +94,9 @@ class _priortyselectState extends State<priortyselect> {
             backgroundColor: widget.priority == 1 ? Mycolor.primary : Mycolor.grey,
             elevation: 1,
           ),
-          child: Text('High Priority'),
+          child: const Text('High Priority'),
         ),
-        SizedBox(width: 16),
+        const SizedBox(width: 16),
         ElevatedButton(
           onPressed: () {setState(() {
             widget.priority = 2;
@@ -106,7 +106,7 @@ class _priortyselectState extends State<priortyselect> {
              backgroundColor: widget.priority == 2 ? Colors.red : Mycolor.grey,
             elevation: 1,
           ),
-          child: Text('Low Priority'),
+          child: const Text('Low Priority'),
         ),
        const SizedBox(width: 10,),
 

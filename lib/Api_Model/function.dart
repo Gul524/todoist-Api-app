@@ -27,7 +27,7 @@ Future<TasksModel?> createTask( TasksModel newTask) async {
 
 Future<bool> deleteTask(String taskId) async {
   final response = await http.delete(
-    Uri.parse(url + '/tasks/$taskId'),
+    Uri.parse('$url/tasks/$taskId'),
     headers: {"Authorization": "Bearer $taskToken"},
   );
 
@@ -41,7 +41,7 @@ Future<bool> deleteTask(String taskId) async {
 
 Future<TasksModel?> updateTask(TasksModel updatedTask) async {
   final response = await http.put(
-    Uri.parse(url + '/tasks/${updatedTask.id}'),
+    Uri.parse('$url/tasks/${updatedTask.id}'),
     headers: {'Content-Type': 'application/json' , "Authorization": "Bearer $taskToken"},
     body: jsonEncode(updatedTask.toJson()),
   );
@@ -82,7 +82,7 @@ Future<TasksModel?> updateTask(TasksModel updatedTask) async {
 
 
 Future<List<TasksModel>> readAllTasks() async {
-  final response = await http.get(Uri.parse(url + '/tasks'),
+  final response = await http.get(Uri.parse('$url/tasks'),
   headers: {"Authorization": "Bearer $taskToken"});
 
   if (response.statusCode == 200) { // Check for successful retrieval (200 OK)
